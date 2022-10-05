@@ -7,9 +7,5 @@ import React from "react";
 // }
 
 export default function Hello () {
-    return ( <div>
-    <h1>Hello World</h1>,
-    <p>What a beautiful day</p>
-    </div>  
-    )
+    return <h1>Hello World</h1>
 }
