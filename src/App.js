@@ -11,6 +11,6 @@ import { Welcome } from "./Welcome";
 export default function App () {
     return <div>
             <Hello />
-            <Welcome />
+            <Welcome age={27} name={<strong>Michele</strong>}/>
         </div>;
 }
