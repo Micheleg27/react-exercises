@@ -1,5 +1,6 @@
 import React from "react";
 import Hello from "./Hello";
+import { Welcome } from "./Welcome";
 
 // export default class App extends React.Component {
 //     render(){
@@ -8,5 +9,8 @@ import Hello from "./Hello";
 // }
 
 export default function App () {
-    return <div><Hello /></div>;
+    return <div>
+            <Hello />
+            <Welcome name="Michele"/>
+        </div>;
 }
