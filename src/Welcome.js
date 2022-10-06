@@ -6,6 +6,7 @@ export class Welcome extends React.Component {
         name: 'guest'
       }
 
+      
     render(){
         return (<div>
             <p>Welcome, {this.props.name}</p>
