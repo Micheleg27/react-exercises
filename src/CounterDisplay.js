@@ -12,8 +12,12 @@ export class CounterDisplay extends React.Component {
 
         setInterval(() => {
             this.setState((state) => {
+                // STATE05: 
+                // if(state.count > this.props.initialValue * 10){
+                //     state.count = this.props.initialValue;
+                // }
+
                 return {
-                    
                     count: state.count + (this.props.incrementBy)
                 }
             })
@@ -33,5 +37,3 @@ CounterDisplay.defaultProps = {
     incrementBy: 1,
     timeout: 1000,
 }
-
-// State05: 

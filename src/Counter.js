@@ -4,7 +4,7 @@ import { CounterDisplay } from './CounterDisplay';
 export class Counter extends React.Component {
 
     render() {
-        return <h1> <CounterDisplay initialValue={5} /> </h1>
+        return <h1> <CounterDisplay initialValue={1} /> </h1>
     }
 }
 
