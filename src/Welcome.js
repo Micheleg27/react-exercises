@@ -9,3 +9,7 @@ export class Welcome extends React.Component {
         return <p>Welcome, {this.props.name}</p>
     }
 }
+
+// Welcome.defaultProps = {
+//     name: 'guest'
+// }
