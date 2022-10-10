@@ -20,7 +20,7 @@ export class Counter extends React.Component {
 
     componentDidMount(){
 
-        setInterval(() => {
+        this._interval = setInterval(() => {
             this.setState((state) => {
     
                 return {
@@ -29,6 +29,29 @@ export class Counter extends React.Component {
             })
         }, this.props.timeout)
     }
+
+    // COMPONENT-LIFECYCLE-02
+    // componentDidMount(){
+
+    //     this._interval = setInterval(() => {
+    //         this.setState((state) => {
+    
+    //             return {
+    //                 count: state.count + (this.props.incrementBy)
+    //             }
+    //         })
+    //     }, this.props.timeout)
+    // }
+    // componentWillUnmount(){
+    //     clearInterval(this._interval);
+
+    // }
+
+    // COMPONENT-LYFECYCLE-03
+    // componentDidUpdate(){
+    //     state.count > this.props.initialValue * 10 && clearInterval(this._interval)
+    // }
+
 
 }
 
