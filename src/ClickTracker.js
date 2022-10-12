@@ -2,12 +2,12 @@ import React from "react";
 
 export class ClickTracker extends React.Component {
     state = {
-        id: '',
+        click: '',
     }
 
     lastButton = (e) => {
         this.setState(() => {
-            return {id: e.target.id}
+            return {click: e.target.id}
         })
     }
 
@@ -18,7 +18,7 @@ export class ClickTracker extends React.Component {
                     <button id="btn1" onClick={this.lastButton}>Button 1</button>
                     <button id="btn2" onClick={this.lastButton}>Button 2</button>
                     <button id="btn3" onClick={this.lastButton}>Button 3</button>
-                    <h1>Last button clicked: {this.state.id}</h1>
+                    <h1>Last button clicked: {this.state.click}</h1>
                 </div>
         )      
     }
