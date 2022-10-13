@@ -38,6 +38,9 @@ export class Login extends React.Component {
         })
     }
 
+    // Il setState dell'Handlereset non ha bisogno di un parametro State in quanto le modifiche applicate da quest'ultimo alle proprietà 
+    // non dipendono dal valore iniziale delle proprietà stesse (a prescindere da ciò che avrò negli input, il valore tornerà ai settaggi predefiniti, quindi con gli input vuoti)
+
     render(){
         return (
             <form>
@@ -51,6 +54,8 @@ export class Login extends React.Component {
         )
     }
 }
+// !this.state.nome || !this.state.key indica una condizione in cui almeno una delle due espressioni è vera (almeno uno dei due campi è vuoto)
+// 
 
 Login.defaultProps = {
     onLogin: () =>{console.error('Login function does not exist!')}
