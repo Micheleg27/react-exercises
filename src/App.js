@@ -6,6 +6,7 @@ import { ClickCounter } from "./ClickCounter";
 import { ClickTracker } from "./ClickTracker";
 import { InteraciveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
+import { UncontrolledLogin } from "./UncontrolledLogin";
 
 const login = (dati) => {
     console.log(dati)
@@ -21,6 +22,7 @@ export default class App extends React.Component {
                 <ClickTracker />
                 <InteraciveWelcome />
                 <Login onLogin = { login }/>
+                <UncontrolledLogin />
                 </div>;
     }
 }
