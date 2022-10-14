@@ -46,7 +46,7 @@ export class ToDoList extends React.Component{
                 </ul>
 
                 <button onClick={this.addTodo}>Add a task</button>
-                <input type='text' onChange={this.getInput} value={this.state.value}></input>
+                <input ref={this.myTextInput} type='text' onChange={this.getInput} value={this.state.value}></input>
             </div>
         )
     }
