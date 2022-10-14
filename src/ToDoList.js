@@ -10,22 +10,29 @@ export class ToDoList extends React.Component{
         }
     }
 
+    // myTextInput = React.createRef()
+
 
     getInput = (event) => {
 
         this.setState(
             {value: event.target.value}
         )
-        
     }
 
     addTodo = () => {
+        this.setState(
+            {items: [...this.state.items, this.state.value]},
+        );
+
+            // this.myTextInput.current.clear();
 
         this.setState(
-            {items: [...this.state.items, this.state.value]}
+            {value: ''}
         )
     }
     
+
     render(){
 
         const ListItems = this.state.items.map((todo, index) => {
@@ -39,7 +46,7 @@ export class ToDoList extends React.Component{
                 </ul>
 
                 <button onClick={this.addTodo}>Add a task</button>
-                <input type='text' onChange={this.getInput}></input>
+                <input type='text' onChange={this.getInput} value={this.state.value}></input>
             </div>
         )
     }
