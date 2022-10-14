@@ -31,6 +31,12 @@ export class ToDoList extends React.Component{
             {value: ''}
         )
     }
+
+    clearItems = () => {
+        this.setState(
+            {items: []}
+        )
+    }
     
 
     render(){
@@ -45,8 +51,10 @@ export class ToDoList extends React.Component{
                     {ListItems}
                 </ul>
 
-                <button onClick={this.addTodo}>Add a task</button>
+                
                 <input ref={this.myTextInput} type='text' onChange={this.getInput} value={this.state.value}></input>
+                <button onClick={this.addTodo}>Add a task</button>
+                <button onClick={this.clearItems}>Reset</button>
             </div>
         )
     }
