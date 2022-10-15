@@ -1,19 +1,20 @@
 import React from "react";
 
 export class ToDoList extends React.Component{
+
     constructor(props){
         super(props)
 
         this.state = {
             items: [],
             value: '',
+            liValue: ''
         }
     }
 
-    // myTextInput = React.createRef()
-
 
     getInput = (event) => {
+        event.preventDefault()
 
         this.setState(
             {value: event.target.value}
@@ -25,24 +26,37 @@ export class ToDoList extends React.Component{
             {items: [...this.state.items, this.state.value]},
         );
 
-            // this.myTextInput.current.clear();
-
         this.setState(
             {value: ''}
         )
     }
 
     clearItems = () => {
+
         this.setState(
             {items: []}
         )
+    }
+
+    removeListItem = (index) => {
+
+            const newArr = [...this.state.items]
+            newArr.splice(index, 1)
+
+            this.setState(
+                {items: newArr}
+            )
     }
     
 
     render(){
 
         const ListItems = this.state.items.map((todo, index) => {
-            return <li key={index}>{todo}</li>
+            return ( <div >
+                <li key={index} value={this.state.liValue}>{todo}</li>
+                <button onClick={() => this.removeListItem(index)}>Remove</button>
+            </div> )
+            
         })
 
         return (
@@ -52,7 +66,7 @@ export class ToDoList extends React.Component{
                 </ul>
 
                 
-                <input ref={this.myTextInput} type='text' onChange={this.getInput} value={this.state.value}></input>
+                <input type='text' onChange={this.getInput} value={this.state.value}></input>
                 <button onClick={this.addTodo}>Add a task</button>
                 <button onClick={this.clearItems}>Reset</button>
             </div>
