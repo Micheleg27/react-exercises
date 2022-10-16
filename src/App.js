@@ -30,6 +30,7 @@ export default class App extends React.Component {
                     <ToDoList 
                     render={(items, remove) => {
 
+                        
                         const ListItems = items.map((todo, index) =>
                         <li id={index}>
                         {todo}
