@@ -9,6 +9,7 @@ import { Login } from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { ToDoList } from "./ToDoList";
 import { Container } from "./Container";
+import { SelectLanguage } from "./SelectLanguage";
 
 const login = (dati) => {
     console.log(dati)
@@ -38,7 +39,8 @@ export default class App extends React.Component {
                     </li>)
                     return <ul>{ListItems}</ul>
                 }}/>
-
+                
+                <SelectLanguage />
                 </Container>
                 </div>;
     }
