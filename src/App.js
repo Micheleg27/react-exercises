@@ -17,16 +17,19 @@ const login = (dati) => {
 export default class App extends React.Component {
     render(){
         return <div>
-                <Hello />
-                <Welcome name={<strong>Michele</strong>} age={17} />
-                <Counter />
-                <ClickCounter />
-                <ClickTracker />
-                <InteraciveWelcome />
-                <Login onLogin = { login }/>
-                <UncontrolledLogin />
-                <ToDoList />
-                <Container />
+                <Container title='My React application' >
+
+                    <Hello />
+                    <Welcome name={<strong>Michele</strong>} age={17} />
+                    <Counter />
+                    <ClickCounter />
+                    <ClickTracker />
+                    <InteraciveWelcome />
+                    <Login onLogin = { login }/>
+                    <UncontrolledLogin />
+                    <ToDoList />
+
+                </Container>
                 </div>;
     }
 }

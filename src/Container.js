@@ -3,7 +3,8 @@ import React from "react";
 export class Container extends React.Component {
     render() {
         return <div className="container">
-                {this.props.children}
+                    <h1 className="title-container">{this.props.title}</h1>
+                    <div>{this.props.children}</div>
             </div>
     }
 }

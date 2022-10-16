@@ -1,12 +1,18 @@
 .welcome {
     background-color: lightblue;
     border: 5px solid black;
-    padding: 15px;
+    padding: 25px;
+    width: 200px;
+    margin-bottom: 25px;
+    margin-top: 25px;
+    height: 150px;
 }
 
 .container{
     background-color: white;
     border: 5px solid red;
-    height: 100px;
-    width: 250px;
+    height: 100%;
+    width: 100%;
+    padding: 50px;
+    margin: 25px;
 }
