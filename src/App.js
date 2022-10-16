@@ -8,6 +8,7 @@ import { InteraciveWelcome } from "./InteractiveWelcome";
 import { Login } from "./Login";
 import { UncontrolledLogin } from "./UncontrolledLogin";
 import { ToDoList } from "./ToDoList";
+import { Container } from "./Container";
 
 const login = (dati) => {
     console.log(dati)
@@ -25,6 +26,7 @@ export default class App extends React.Component {
                 <Login onLogin = { login }/>
                 <UncontrolledLogin />
                 <ToDoList />
+                <Container />
                 </div>;
     }
 }
