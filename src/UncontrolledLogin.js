@@ -1,31 +1,31 @@
 import React from "react";
 
-export class UncontrolledLogin extends React.Component{
+export class UncontrolledLogin extends React.Component {
+    _formRef = React.createRef()
 
-    SubmitForm = (event) => {
+    formSubmit = (event) => {
         event.preventDefault()
 
-        const username = event.target.elements.username.value
-        const password = event.target.elements.password.value
-        const remember  = event.target.elements.remember.checked
+                const userInfo = {
+                    username: event.target.elements.username.value,
+                    password: event.target.elements.password.value,
+                    remember: event.target.elements.remember.checked,
+                }
 
-        console.log({
-            username,
-            password,
-            remember,
-        })
-    }
+                console.log(userInfo)
+            }
+
 
     render(){
-        return <div>
-                <form onSubmit={this.SubmitForm}>
-                    <input name='username' type='text' required />
-                    <input name='password' type='password' required />
-                    <input name='remember' type='checkbox' />
-                
-                    <button type='submit'>LOGIN</button>
-                    <button type='reset'>CLEAR</button>
+        return (
+                <form onSubmit={this.formSubmit} ref={this._formRef} >
+                <input type='text' name='username'></input>
+                <input type='password' name='password'></input>
+                <input type='checkbox' name='remember'></input>
+
+                <button>LOGIN</button>
+                <button>CLEAR</button>
                 </form>
-        </div>
+        )
     }
 }
