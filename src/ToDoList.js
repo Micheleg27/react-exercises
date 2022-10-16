@@ -53,9 +53,9 @@ export class ToDoList extends React.Component{
 
         return (
             <div>
-                {this.props.render(this.state.items)}
 
-                
+                {this.props.render(this.state.items, this.removeListItem)}
+
                 <input type='text' onChange={this.getInput} value={this.state.value}></input>
                 <button onClick={this.addTodo}>Add a task</button>
                 <button onClick={this.clearItems}>Reset</button>
