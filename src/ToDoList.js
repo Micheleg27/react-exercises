@@ -51,19 +51,9 @@ export class ToDoList extends React.Component{
 
     render(){
 
-        const ListItems = this.state.items.map((todo, index) => {
-            return ( <div >
-                <li key={index} value={this.state.liValue}>{todo}</li>
-                <button onClick={() => this.removeListItem(index)}>Remove</button>
-            </div> )
-            
-        })
-
         return (
             <div>
-                <ul>
-                    {ListItems}
-                </ul>
+                {this.props.render(this.state.items)}
 
                 
                 <input type='text' onChange={this.getInput} value={this.state.value}></input>

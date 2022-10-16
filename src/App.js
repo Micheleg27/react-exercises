@@ -27,7 +27,23 @@ export default class App extends React.Component {
                     <InteraciveWelcome />
                     <Login onLogin = { login }/>
                     <UncontrolledLogin />
-                    <ToDoList />
+                    <ToDoList 
+                    render={(items) => {
+                        items = this.state.items
+
+                        this.state.items.map((todo, index) => {
+                            return (
+                                <div>
+                                    <ul>
+                                    <li key={index} value={this.state.liValue}>{todo}</li>
+                                    <button onClick={() => this.removeListItem(index)}>Remove</button>
+                                    </ul>
+                                </div>
+                            )
+                        })
+                    }}
+                    >
+                    </ToDoList>
 
                 </Container>
                 </div>;
