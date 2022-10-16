@@ -42,13 +42,18 @@ export class Login extends React.Component {
     // non dipendono dal valore iniziale delle proprietà stesse (a prescindere da ciò che avrò negli input, il valore tornerà ai settaggi predefiniti, quindi con gli input vuoti)
 
     render(){
+
+        const PassColor = {
+            backgroundColor: this.state.key.length < 8 ? 'red' : 'green'
+        }
+
         return (
             <form>
                 <input type='text' name='nome' value={this.state.nome} onChange={this.handleInput}></input>
                 <input type='password' name='key' value={this.state.key} onChange={this.handleInput} ></input>
                 <input type='checkbox' name='remember' checked={this.state.remember} onChange={this.handleInput}></input>
 
-                <button name='login' type='button' disabled={!this.state.nome || !this.state.key} onClick={this.handleLogin}>LOGIN</button>
+                <button name='login' type='button' disabled={!this.state.nome || !this.state.key} onClick={this.handleLogin} style={PassColor}>LOGIN</button>
                 <button name='reset' type='button' onClick={this.handleReset}>CLEAR</button>
             </form>
         )
