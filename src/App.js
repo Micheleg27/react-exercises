@@ -10,6 +10,7 @@ import { UncontrolledLogin } from "./UncontrolledLogin";
 import { ToDoList } from "./ToDoList";
 import { Container } from "./Container";
 import { SelectLanguage } from "./SelectLanguage";
+import { Sum } from "./Sum";
 
 const login = (dati) => {
     console.log(dati)
@@ -41,6 +42,7 @@ export default class App extends React.Component {
                 }}/>
                 
                 <SelectLanguage />
+                <Sum numbers={[5, 6, 12, 13]}/>
                 </Container>
                 </div>;
     }
