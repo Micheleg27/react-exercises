@@ -21,7 +21,7 @@ export default class App extends React.Component {
                 <Container title='My React application' >
 
                     <Hello />
-                    <Welcome name={<strong>Michele</strong>} age={17} />
+                    <Welcome name={<strong>Michele Garribba</strong>} age={27} />
                     <Counter />
                     <ClickCounter />
                     <ClickTracker />
