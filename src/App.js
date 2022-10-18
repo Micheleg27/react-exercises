@@ -12,8 +12,8 @@ import { Container } from "./Container";
 import { SelectLanguage } from "./SelectLanguage";
 import { Sum } from "./Sum";
 
-const login = (dati) => {
-    console.log(dati)
+const login = (data) => {
+    console.log(data)
 }
 
 export default class App extends React.Component {
