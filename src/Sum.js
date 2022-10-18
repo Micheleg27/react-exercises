@@ -4,6 +4,9 @@ export function Sum ({numbers: [...nums]}){
     return <h1>The sum is: {nums.reduce((sum, value) => sum += value)}</h1>
 }
 
+Sum.defaultProps = {
+    numbers: [4,5,6]
+}
 
 // Risolto con rest operator in quanto la traccia a mia interpretazione richiedeva
 // la somma a prescindere dal numero di elementi degli array, in altro caso:

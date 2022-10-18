@@ -42,7 +42,7 @@ export default class App extends React.Component {
                 }}/>
                 
                 <SelectLanguage />
-                <Sum numbers={[4, 6]}/>
+                <Sum />
                 </Container>
                 </div>;
     }
