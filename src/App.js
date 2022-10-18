@@ -12,9 +12,6 @@ import { Container } from "./Container";
 import { SelectLanguage } from "./SelectLanguage";
 import { Sum } from "./Sum";
 
-const login = (data) => {
-    console.log(data)
-}
 
 export default class App extends React.Component {
     render(){
@@ -27,7 +24,7 @@ export default class App extends React.Component {
                     <ClickCounter />
                     <ClickTracker />
                     <InteraciveWelcome />
-                    <Login onLogin = { login }/>
+                    <Login />
                     <UncontrolledLogin />
                     <ToDoList 
                     render={(items, remove) => {
