@@ -20,6 +20,16 @@ export function Login () {
     })
 }
 
+    function resetInput() {
+        setForm(() => {
+            return {
+                username: '',
+                password: '',
+                remember: false
+            }
+        })
+    }
+
     console.log(data)
 
     return (
@@ -28,7 +38,8 @@ export function Login () {
                 <input onChange={handleLoginChange} value={data.password} type='password' name='password'></input>
                 <input onChange={handleLoginChange} checked={data.remember} type='checkbox' name='remember'></input>
 
-                <button>Login</button>
+                <button disabled={!data.username || !data.password}>Login</button>
+                <button onClick={resetInput}>Reset</button>
             </form>
     ) 
 }
