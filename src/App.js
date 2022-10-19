@@ -13,6 +13,7 @@ import { SelectLanguage } from "./SelectLanguage";
 import { Sum } from "./Sum";
 
 
+
 export default class App extends React.Component {
     render(){
         return <div>
@@ -21,7 +22,7 @@ export default class App extends React.Component {
                     <Hello />
                     <Welcome name={<strong>Michele Garribba</strong>} age={27} />
                     <Counter />
-                    <ClickCounter />
+                    <ClickCounter onCounterChange={onCounterChange}/>
                     <ClickTracker />
                     <InteraciveWelcome />
                     <Login />

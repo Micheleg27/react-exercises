@@ -20,7 +20,7 @@ import React, { useEffect, useState } from "react";
 //     }
 // }
 
-export function ClickCounter ({initialValue = 0}, {incrementOne = 1}, props) {
+export function ClickCounter ({initialValue = 0}, {incrementOne = 1}, {onCounterChange}) {
 
     const [count, clickCount] = useState(initialValue)
 
@@ -29,10 +29,10 @@ export function ClickCounter ({initialValue = 0}, {incrementOne = 1}, props) {
     }
 
     useEffect(() => {
-         props.onCounterChange(count);
+         onCounterChange(count);
     }, 
     
-    [count, props]);
+    [count, onCounterChange]);
 
     return      <div>
                     <button onClick={incrementCount}>Click Counter</button>
