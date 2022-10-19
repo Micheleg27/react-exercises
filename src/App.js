@@ -12,7 +12,6 @@ import { Container } from "./Container";
 import { SelectLanguage } from "./SelectLanguage";
 import { Sum } from "./Sum";
 
-
 export default class App extends React.Component {
     render(){
         return <div>

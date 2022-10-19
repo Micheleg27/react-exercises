@@ -25,7 +25,7 @@ export function ClickCounter ({initialValue = 0}, {incrementOne = 1}) {
     const [count, clickCount] = useState(initialValue)
 
     function incrementCount() {
-        clickCount(count + incrementOne)
+        clickCount(count => count + incrementOne)
     }
 
     return      <div>
