@@ -11,6 +11,7 @@ import { ToDoList } from "./ToDoList";
 import { Container } from "./Container";
 import { SelectLanguage } from "./SelectLanguage";
 import { Sum } from "./Sum";
+import { click } from "@testing-library/user-event/dist/click";
 
 export default class App extends React.Component {
     render(){
@@ -20,7 +21,7 @@ export default class App extends React.Component {
                     <Hello />
                     <Welcome name={<strong>Michele Garribba</strong>} age={27} />
                     <Counter />
-                    <ClickCounter />
+                    <ClickCounter onCounterChange={(count) => {return console.log('Counter is' + count)}}/>
                     <ClickTracker />
                     <InteraciveWelcome />
                     <Login />

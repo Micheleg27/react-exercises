@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 // export class ClickCounter extends React.Component {
 
@@ -20,13 +20,19 @@ import React, { useState } from "react";
 //     }
 // }
 
-export function ClickCounter ({initialValue = 0}, {incrementOne = 1}) {
+export function ClickCounter ({initialValue = 0, incrementOne = 1}, props) {
 
     const [count, clickCount] = useState(initialValue)
 
-    function incrementCount() {
-        clickCount(count => count + incrementOne)
+    const incrementCount = () => {
+        clickCount(count + incrementOne)
     }
+
+    useEffect(() => {
+        props.onCounterChange(count);
+    }, 
+    
+    [count, props]);
 
     return      <div>
                     <button onClick={incrementCount}>Click Counter</button>
