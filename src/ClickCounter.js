@@ -20,11 +20,11 @@ import React, { useEffect, useState } from "react";
 //     }
 // }
 
-export function ClickCounter ({initialValue = 0}, {incrementOne = 1}, props) {
+export function ClickCounter ({initialValue = 0, incrementOne = 1}, props) {
 
     const [count, clickCount] = useState(initialValue)
 
-    function incrementCount() {
+    const incrementCount = () => {
         clickCount(count + incrementOne)
     }
 
