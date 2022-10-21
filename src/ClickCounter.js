@@ -22,10 +22,10 @@ import React, { useEffect, useState } from "react";
 
 export function ClickCounter ({initialValue = 0, incrementOne = 1}, props) {
 
-    const [count, clickCount] = useState(initialValue)
+    const [count, setCount] = useState(initialValue)
 
     const incrementCount = () => {
-        clickCount(count + incrementOne)
+        setCount(count + incrementOne)
     }
 
     useEffect(() => {

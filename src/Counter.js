@@ -1,65 +1,28 @@
-import React from 'react';
-import { CounterDisplay } from './CounterDisplay';
+import { useEffect, useState } from "react"
+import { CounterDisplay } from "./CounterDisplay"
 
-export class Counter extends React.Component {
+export function Counter ({initVal = 0}) {
 
-    state = {
-        count: this.props.initialValue,
+    let [cont, setCont] = useState(initVal)
+
+    function handleCont () {
+        setInterval(() => {
+            setCont(cont => cont + 1)
+        }, 1000)
     }
 
-    // constructor(props) {
-    //     super(props);
 
-    // CONSTRUCTOR IS USELESS
+    useEffect(() => {
+        handleCont()
 
-    // }
+        return () => {
+            console.log('CounterFunc has unmounted')
+        }
+    }, [])
 
-    render() {
-        return <h1> <CounterDisplay count={this.state.count}/> </h1>
-    }
-
-    componentDidMount(){
-
-        this._interval = setInterval(() => {
-            this.setState((state) => {
-    
-                return {
-                    count: state.count + (this.props.incrementBy)
-                }
-            })
-        }, this.props.timeout)
-    }
-
-    // COMPONENT-LIFECYCLE-02
-    // componentDidMount(){
-
-    //     this._interval = setInterval(() => {
-    //         this.setState((state) => {
-    
-    //             return {
-    //                 count: state.count + (this.props.incrementBy)
-    //             }
-    //         })
-    //     }, this.props.timeout)
-    // }
-    // componentWillUnmount(){
-    //     clearInterval(this._interval);
-
-    // }
-
-    // COMPONENT-LYFECYCLE-03
-    // componentDidUpdate(){
-    //     state.count > this.props.initialValue * 10 && clearInterval(this._interval)
-    // }
-
-
+    return (
+        <div>
+           <h1><CounterDisplay count={cont}/></h1>
+        </div>
+    )
 }
-
-Counter.defaultProps = {
-    initialValue: 0,
-    incrementBy: 1,
-    timeout: 1000,
-}
-
-// State02: Il parametro del SetState dev'essere una callback invece di un oggetto 
-//poiché il valore di ritorno dipende dal valore dato in input

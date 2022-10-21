@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import Hello from "./Hello";
 import { Welcome } from "./Welcome";
 import { Counter } from "./Counter";
@@ -11,36 +11,44 @@ import { ToDoList } from "./ToDoList";
 import { Container } from "./Container";
 import { SelectLanguage } from "./SelectLanguage";
 import { Sum } from "./Sum";
-import { click } from "@testing-library/user-event/dist/click";
+import { GitHubUser } from "./GitHubUser";
 
-export default class App extends React.Component {
-    render(){
-        return <div>
-                <Container title='My React application' >
 
-                    <Hello />
-                    <Welcome name={<strong>Michele Garribba</strong>} age={27} />
-                    <Counter />
-                    <ClickCounter onCounterChange={(count) => {return console.log('Counter is' + count)}}/>
-                    <ClickTracker />
-                    <InteraciveWelcome />
-                    <Login />
-                    <UncontrolledLogin />
-                    <ToDoList 
-                    render={(items, remove) => {
+export function App() {
 
-                        
-                        const ListItems = items.map((todo, index) =>
-                        <li id={index}>
-                        {todo}
-                        <button onClick={() => {remove(index)}} name={'remove'} id={index}>Remove</button>                       
-                    </li>)
-                    return <ul>{ListItems}</ul>
-                }}/>
-                
-                <SelectLanguage />
-                <Sum />
-                </Container>
-                </div>;
+    const [showCounter, setResetCounter] = useState(true)
+
+    function handleUnmount() {
+        setResetCounter(showCounter => !showCounter)
     }
+
+    return <div>
+        <Container title='My React application' >
+
+            <Hello />
+            <Welcome name={<strong>Michele Garribba</strong>} age={27} />
+            <button onClick={handleUnmount}>Reset Counter</button>
+            {showCounter && <Counter />}
+            {/* <ClickCounter onCounterChange={(count) => {return console.log('Count is:' + count)}}/> */}
+            <ClickTracker />
+            <InteraciveWelcome />
+            <Login />
+            <UncontrolledLogin />
+            <ToDoList
+                render={(items, remove) => {
+
+
+                    const ListItems = items.map((todo, index) =>
+                        <li id={index}>
+                            {todo}
+                            <button onClick={() => { remove(index) }} name={'remove'} id={index}>Remove</button>
+                        </li>)
+                    return <ul>{ListItems}</ul>
+                }} />
+
+            <SelectLanguage />
+            <Sum />
+            <GitHubUser username='gianmarcotoso'/>
+        </Container>
+    </div>;
 }
