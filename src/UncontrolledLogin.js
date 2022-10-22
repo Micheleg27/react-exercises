@@ -1,7 +1,6 @@
 import React from "react";
 
 export class UncontrolledLogin extends React.Component {
-    _formRef = React.createRef()
 
     formSubmit = (event) => {
         event.preventDefault()
