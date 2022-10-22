@@ -14,6 +14,7 @@ import { Sum } from "./Sum";
 import { GitHubUser } from "./GitHubUser";
 import { GitHubUserList } from "./GitHubUserList";
 import { HookCounter } from "./HookCounter";
+import { HookForm } from "./HookForm";
 
 
 export function App() {
@@ -53,6 +54,7 @@ export function App() {
             <GitHubUser username='gianmarcotoso'/>
             <GitHubUserList />
             <HookCounter />
+            <HookForm />
         </Container>
     </div>;
 }
