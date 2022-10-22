@@ -13,6 +13,7 @@ import { SelectLanguage } from "./SelectLanguage";
 import { Sum } from "./Sum";
 import { GitHubUser } from "./GitHubUser";
 import { GitHubUserList } from "./GitHubUserList";
+import { HookCounter } from "./HookCounter";
 
 
 export function App() {
@@ -51,6 +52,7 @@ export function App() {
             <Sum />
             <GitHubUser username='gianmarcotoso'/>
             <GitHubUserList />
+            <HookCounter />
         </Container>
     </div>;
 }
