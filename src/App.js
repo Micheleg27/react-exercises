@@ -15,6 +15,7 @@ import { GitHubUser } from "./GitHubUser";
 import { GitHubUserList } from "./GitHubUserList";
 import { HookCounter } from "./HookCounter";
 import { HookForm } from "./HookForm";
+import { DisplayLanguage } from "./DisplayLanguage";
 
 
 export function App() {
