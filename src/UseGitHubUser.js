@@ -17,6 +17,6 @@ export function useGitHubUser(username){
     }, [username])
 
     return (
-        {data, err, load}
+        {data, err, load, onGetUser: useGitHubUser}
     )
 }
