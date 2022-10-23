@@ -60,4 +60,4 @@ export function App() {
             <CarDetails />
         </Container>
     </div>;
-}
+} 
