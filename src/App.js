@@ -17,48 +17,56 @@ import { HookCounter } from "./HookCounter";
 import { HookForm } from "./HookForm";
 import { FilteredList } from "./FilteredList";
 import { CarDetails } from "./CarDetails";
+import { Routes, Route } from 'react-router-dom'
 
 
 export function App() {
-
-    const [showCounter, setResetCounter] = useState(true)
-
-    function handleUnmount() {
-        setResetCounter(showCounter => !showCounter)
-    }
-
-    return <div>
-        <Container title='My React application' >
-
-            <Hello />
-            <Welcome name={<strong>Michele Garribba</strong>} age={27} />
-            <button onClick={handleUnmount}>Reset Counter</button>
-            {showCounter && <Counter />}
-            {/* <ClickCounter /> */}
-            <ClickTracker />
-            <InteraciveWelcome />
-            <Login />
-            <UncontrolledLogin />
-            <ToDoList
-                render={(items, remove) => {
-
-
-                    const ListItems = items.map((todo, index) =>
-                        <li id={index}>
-                            {todo}
-                            <button onClick={() => { remove(index) }} name={'remove'} id={index}>Remove</button>
-                        </li>)
-                    return <ul>{ListItems}</ul>
-                }} />
-
-            <SelectLanguage />
-            <Sum />
-            <GitHubUser username='gianmarcotoso'/>
-            <GitHubUserList />
-            <HookCounter />
-            <HookForm />
-            <CarDetails />
-            <FilteredList />
-        </Container>
-    </div>;
+    return(
+        <Routes>
+            <Route path="/" element={<Welcome name='Michele'/>} />
+        </Routes>
+    )
 } 
+// export function App() {
+
+//     const [showCounter, setResetCounter] = useState(true)
+
+//     function handleUnmount() {
+//         setResetCounter(showCounter => !showCounter)
+//     }
+
+//     return <div>
+//         <Container title='My React application' >
+
+//             <Hello />
+//             <Welcome name={<strong>Michele Garribba</strong>} age={27} />
+//             <button onClick={handleUnmount}>Reset Counter</button>
+//             {showCounter && <Counter />}
+//             {/* <ClickCounter /> */}
+//             <ClickTracker />
+//             <InteraciveWelcome />
+//             <Login />
+//             <UncontrolledLogin />
+//             <ToDoList
+//                 render={(items, remove) => {
+
+
+//                     const ListItems = items.map((todo, index) =>
+//                         <li id={index}>
+//                             {todo}
+//                             <button onClick={() => { remove(index) }} name={'remove'} id={index}>Remove</button>
+//                         </li>)
+//                     return <ul>{ListItems}</ul>
+//                 }} />
+
+//             <SelectLanguage />
+//             <Sum />
+//             <GitHubUser username='gianmarcotoso'/>
+//             <GitHubUserList />
+//             <HookCounter />
+//             <HookForm />
+//             <CarDetails />
+//             <FilteredList />
+//         </Container>
+//     </div>;
+// } 
