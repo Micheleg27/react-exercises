@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import Hello from "./Hello";
 import { Welcome } from "./Welcome";
 import { Counter } from "./Counter";
@@ -22,9 +22,12 @@ import { Routes, Route } from 'react-router-dom'
 
 export function App() {
     return(
-        <Routes>
-            <Route path="/" element={<Welcome name='Michele'/>} />
-        </Routes>
+        <Container title={'My awesome App!'}>   
+            <Routes>
+                <Route path="/" element={<Welcome name="Michele"/>} />
+                <Route path="counter" element={<Counter />} />
+            </Routes>
+        </Container>
     )
 } 
 // export function App() {
