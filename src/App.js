@@ -11,6 +11,7 @@ import { ToDoList } from "./ToDoList";
 import { Container } from "./Container";
 import { SelectLanguage } from "./SelectLanguage";
 import { Sum } from "./Sum";
+import { CarDetails } from "./CarDetails";
 
 
 export function App() {
@@ -47,6 +48,7 @@ export function App() {
 
             <SelectLanguage />
             <Sum />
+            <CarDetails />
         </Container>
     </div>;
 }
