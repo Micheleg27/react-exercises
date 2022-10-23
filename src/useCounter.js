@@ -1,4 +1,4 @@
-import { useState, useCallback } from "react"
+import { useState, useCallback } from "react";
 
 export function useCounter ({initialValue = 0, counterOne = 1}){
 
