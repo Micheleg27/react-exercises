@@ -15,6 +15,8 @@ import { GitHubUser } from "./GitHubUser";
 import { GitHubUserList } from "./GitHubUserList";
 import { HookCounter } from "./HookCounter";
 import { HookForm } from "./HookForm";
+import { DisplayLanguage } from "./DisplayLanguage";
+import { CarDetails } from "./CarDetails";
 
 
 export function App() {
@@ -32,7 +34,7 @@ export function App() {
             <Welcome name={<strong>Michele Garribba</strong>} age={27} />
             <button onClick={handleUnmount}>Reset Counter</button>
             {showCounter && <Counter />}
-            {/* <ClickCounter onCounterChange={(count) => {return console.log('Count is:' + count)}}/> */}
+            {/* <ClickCounter /> */}
             <ClickTracker />
             <InteraciveWelcome />
             <Login />
@@ -55,6 +57,7 @@ export function App() {
             <GitHubUserList />
             <HookCounter />
             <HookForm />
+            <CarDetails />
         </Container>
     </div>;
 }
