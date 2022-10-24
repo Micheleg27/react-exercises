@@ -25,13 +25,21 @@ export function App() {
     return(
         <Container title={'My awesome App!'}>   
                 <Link to='/'>Navigate to Home</Link> <br />
-                <Link to='/counter'>Navigate to Counter</Link> <br />
-                <Link to='/:username'>Navigate to ShowGithubUser</Link>  
+                <Link to='/counter'>Navigate to Counter</Link> <br />   
+                <Link to='/:username'>Navigate to ShowGithubUser</Link>   <br />
 
             <Routes>
                 <Route path="/" element={<Welcome name="Michele"/>} />
                 <Route path="counter" element={<Counter />} />
-                <Route path="/:username" element={<ShowGitHubUser />}/>          
+                <Route path="/user:username" element={<ShowGitHubUser />}/>  
+                <Route 
+                path='*' 
+                element={ <div>
+                        <p>URL doesn't match any path!</p>
+                        <Link to='/'>Return to Homepage</Link>
+                </div>
+                }/>   
+
             </Routes>
         </Container>
     )
