@@ -17,23 +17,27 @@ import { HookCounter } from "./HookCounter";
 import { HookForm } from "./HookForm";
 import { FilteredList } from "./FilteredList";
 import { CarDetails } from "./CarDetails";
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Link } from 'react-router-dom'
 import { ShowGitHubUser } from "./ShowGitHubUser";
 
 
 export function App() {
     return(
         <Container title={'My awesome App!'}>   
+                <Link to='/'>Navigate to Home</Link> <br />
+                <Link to='/counter'>Navigate to Counter</Link> <br />
+                <Link to='/:username'>Navigate to ShowGithubUser</Link>  
+
             <Routes>
                 <Route path="/" element={<Welcome name="Michele"/>} />
                 <Route path="counter" element={<Counter />} />
-                <Route path="/:username" element={<ShowGitHubUser />}/>
+                <Route path="/:username" element={<ShowGitHubUser />}/>          
             </Routes>
         </Container>
     )
 } 
 // export function App() {
-    
+
 
 //     const [showCounter, setResetCounter] = useState(true)
 
