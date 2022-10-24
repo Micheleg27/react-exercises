@@ -18,6 +18,7 @@ import { HookForm } from "./HookForm";
 import { FilteredList } from "./FilteredList";
 import { CarDetails } from "./CarDetails";
 import { Routes, Route } from 'react-router-dom'
+import { ShowGitHubUser } from "./ShowGitHubUser";
 
 
 export function App() {
@@ -26,6 +27,7 @@ export function App() {
             <Routes>
                 <Route path="/" element={<Welcome name="Michele"/>} />
                 <Route path="counter" element={<Counter />} />
+                <Route path="/:username" element={<ShowGitHubUser />}/>
             </Routes>
         </Container>
     )
