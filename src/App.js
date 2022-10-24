@@ -33,7 +33,8 @@ export function App() {
                 <Route path="/" element={<Welcome name="Michele"/>} />
                 <Route path="counter" element={<Counter />} /> 
                 <Route path="/user" element={<GitHubUserList />}>
-                    <Route path=":username" element={<ShowGitHubUser />}/>     
+                    <Route path=":username" element={<ShowGitHubUser />}/>
+                    <Route index element={<p>Select a user</p>}/>    
                 </Route>
                 <Route 
                 path='*' 

@@ -27,9 +27,9 @@ export function GitHubUserList ({username}){
         <button onClick={addUsername}>Add Username</button>
 
         <ul>
-        {users.map((user, index) => (
-                    <li key={index}>
-                        <Link to={user} key={index} user={user}>{user}</Link>
+        {users.map((user, item) => (
+                    <li key={item}>
+                        <Link to={user} key={item} user={user}>{user}</Link>
                         <Outlet />
                     </li>
                 ))}
