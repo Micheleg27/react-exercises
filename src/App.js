@@ -17,21 +17,27 @@ import { HookCounter } from "./HookCounter";
 import { HookForm } from "./HookForm";
 import { FilteredList } from "./FilteredList";
 import { CarDetails } from "./CarDetails";
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route, Link, useParams } from 'react-router-dom'
 import { ShowGitHubUser } from "./ShowGitHubUser";
 
 
 export function App() {
+
+    const { username } = useParams();
+
     return(
         <Container title={'My awesome App!'}>   
                 <Link to='/'>Navigate to Home</Link> <br />
                 <Link to='/counter'>Navigate to Counter</Link> <br />   
-                <Link to='/:username'>Navigate to ShowGithubUser</Link>   <br />
+                <Link to='/users/username'>Navigate to ShowGithubUser</Link>   <br />
+                <Link to='/user'>Navigate to ShowGithubUserList</Link>
 
             <Routes>
                 <Route path="/" element={<Welcome name="Michele"/>} />
-                <Route path="counter" element={<Counter />} />
-                <Route path="/user:username" element={<ShowGitHubUser />}/>  
+                <Route path="counter" element={<Counter />} /> 
+                <Route path="/user" element={<GitHubUserList />}>
+                    <Route path="/users/username" element={<ShowGitHubUser />}/>     
+                </Route>
                 <Route 
                 path='*' 
                 element={ <div>

@@ -7,7 +7,7 @@ export function ShowGitHubUser(){
 
     return (
         <div>
-            {!username && <GitHubUser username={username}/>}
+            {<GitHubUser username={username}/>}
         </div>
     )
 }
