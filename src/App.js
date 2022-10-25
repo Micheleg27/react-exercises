@@ -27,11 +27,13 @@ export function App() {
         <Container title={'My awesome App!'}>   
                 <Link to='/'>Navigate to Home</Link> <br />
                 <Link to='/counter'>Navigate to Counter</Link> <br />   
-                <Link to='/user'>Navigate to ShowGithubUserList</Link>
+                <Link to='/user'>Navigate to ShowGithubUserList</Link> <br />
+                <Link to='/github'>Navigate to GithubUser</Link>
 
             <Routes>
                 <Route path="/" element={<Welcome name="Michele"/>} />
                 <Route path="counter" element={<Counter />} /> 
+                <Route path="/github" element={<GitHubUser />} />
                 <Route path="/user" element={<GitHubUserList />}>
                     <Route path=":username" element={<ShowGitHubUser />}/>
                     <Route index element={<p>Select a user</p>}/>    
