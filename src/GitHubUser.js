@@ -1,8 +1,8 @@
 import { useGitHubUser } from "./UseGitHubUser"
 
-export function GitHubUser ({username}){
+export function GitHubUser ({username = 'gianmarcotoso'}){
 
-    const {err, load, data} = useGitHubUser(username)
+    const {data, load, err} = useGitHubUser(username)
 
     return (<div>
         {data && <div>GitHub username is: {data.name}</div>}
