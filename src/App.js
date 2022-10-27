@@ -17,14 +17,16 @@ import { HookCounter } from "./HookCounter";
 import { HookForm } from "./HookForm";
 import { FilteredList } from "./FilteredList";
 import { CarDetails } from "./CarDetails";
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
 
 export function App() {
     return(
-        <Routes>
-            <Route path="/" element={<Welcome name='Michele'/>} />
-        </Routes>
+        <BrowserRouter>
+            <Routes>
+                <Route path="/" element={<Welcome name='Michele'/>} />
+            </Routes>
+        </BrowserRouter>       
     )
 } 
 // export function App() {
