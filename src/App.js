@@ -22,11 +22,9 @@ import { Routes, Route, BrowserRouter } from 'react-router-dom'
 
 export function App() {
     return(
-        <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Welcome name='Michele'/>} />
-            </Routes>
-        </BrowserRouter>       
+            </Routes>      
     )
 } 
 // export function App() {
